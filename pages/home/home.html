@@ -1,0 +1,44 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Home</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <h1>PERSONAL LOAN CALCULATOR APP</h1>
+  <p>
+   This Personal Loan calculator will give you a broad estimate on what your monthly
+payment will be and what the matured loan payment will be after it.
+  </p>
+  <p>
+    Source: https://www.ecomparemo.com/loans/personal-loan-calculator
+    </p>
+  <br /> 
+<ion-item>
+  <ion-label>Loan Amount:</ion-label>
+  <ion-input type="number" [(ngModel)]="LoanAmount"></ion-input>
+</ion-item>
+<ion-item>
+  <ion-label>Loan Term:</ion-label>
+  <ion-input type="number" [(ngModel)]="LoanTerm"></ion-input>
+</ion-item>
+<ion-item>
+  <ion-label>Interest Rate:</ion-label>
+  <ion-input type="number" [(ngModel)]="InterestRate"></ion-input>
+</ion-item>
+
+<button ion-button color="secondary" (click)="calculateBMI ()">
+  CALCULATE
+</button>
+
+<ion-item *ngIf="bmi">
+  <h2 >TOTAL INTEREST PAYABLE: {{bmi}} <code> {{bmiMessage}}</code></h2>
+</ion-item>
+
+<ion-item *ngIf="bmi2">
+  <h2 >TOTAL AMOUNT PAYABLE: {{bmi2}} <code> {{bmi2Message}}</code></h2>
+</ion-item>
+
+<ion-item *ngIf="bmi3">
+  <h2 >MONTHLY PAYMENT: {{bmi3}} <code> {{bmi3Message}}</code></h2>
+</ion-item>
