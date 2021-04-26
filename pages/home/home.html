@@ -27,18 +27,18 @@ payment will be and what the matured loan payment will be after it.
   <ion-input type="number" [(ngModel)]="InterestRate"></ion-input>
 </ion-item>
 
-<button ion-button color="secondary" (click)="calculateBMI ()">
+<button ion-button color="secondary" (click)="calculateInterestPayable()" click="calculateAmountPayable()" click="calculateMonthlyPayable()">
   CALCULATE
 </button>
 
-<ion-item *ngIf="bmi">
-  <h2 >TOTAL INTEREST PAYABLE: {{bmi}} <code> {{bmiMessage}}</code></h2>
+<ion-item *ngIf="InterestPayable">
+  <h2 >TOTAL INTEREST PAYABLE: {{InterestPayable}} <code> {{bmiMessage}}</code></h2>
 </ion-item>
 
-<ion-item *ngIf="bmi2">
-  <h2 >TOTAL AMOUNT PAYABLE: {{bmi2}} <code> {{bmi2Message}}</code></h2>
+<ion-item *ngIf="AmountPayable">
+  <h2 >TOTAL AMOUNT PAYABLE: {{AmountPayable}} <code> {{bmi2Message}}</code></h2>
 </ion-item>
 
-<ion-item *ngIf="bmi3">
-  <h2 >MONTHLY PAYMENT: {{bmi3}} <code> {{bmi3Message}}</code></h2>
+<ion-item *ngIf="MonthlyPayable">
+  <h2 >MONTHLY PAYMENT: {{MonthlyPayable}} <code> {{bmi3Message}}</code></h2>
 </ion-item>

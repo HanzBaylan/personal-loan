@@ -10,21 +10,22 @@ export class HomePage {
   LoanAmount: number;
   LoanTerm: number;
   InterestRate: number;
-  bmi: number;
-  bmiMessage: string;
-bmi2: number;
-bmi3: number;
-
-  constructor(public navCtrl: NavController) {}
+  AmountPayable: number;
+  InterestPayable: number;
+  MonthlyPayable: number;
   
-  calculateBMI() {
-    this.bmi = this.LoanAmount * (this.InterestRate / 100) * this.LoanTerm;
-    this.bmi = parseFloat (this.bmi.toFixed(2));
+  calculateInterestPayable() {
+    this.InterestPayable = this.LoanAmount * (this.InterestRate / 100) * this.LoanTerm;
+    this.InterestPayable = parseFloat (this.InterestPayable.toFixed(2));
 
-    this.bmi2 = (this.LoanAmount + this.LoanAmount * (this.InterestRate / 100) * this.LoanTerm);
-    this.bmi = parseFloat(this.bmi.toFixed(2));
-
-    this.bmi3 = ((this.LoanAmount + this.LoanAmount * (this.InterestRate / 100) * this.LoanTerm) / this.LoanTerm)
-    this.bmi = parseFloat(this.bmi.toFixed(2));
+  calculateAmountPayable(); {
+    this.AmountPayable = (this.LoanAmount + this.InterestPayable * (this.InterestRate / 100) * this.LoanTerm);
+    this.AmountPayable = parseFloat(this.AmountPayable.toFixed(2));
+    }
+    
+  calculateMonthlyPayable(); {
+     this.MonthlyPayable = ((this.InterestPayable + this.AmountPayable * (this.InterestRate / 100) * this.LoanTerm) / this.LoanTerm)
+    this.MonthlyPayable = parseFloat(this.MonthlyPayable.toFixed(2));
+  }
   }
 }
