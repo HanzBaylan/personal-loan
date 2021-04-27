@@ -14,15 +14,13 @@ export class HomePage {
   InterestPayable: number;
   MonthlyPayable: number;
   
-  calculateInterestPayable() {
+  calculate() {
     this.InterestPayable = this.LoanAmount * (this.InterestRate / 100) * this.LoanTerm;
     this.InterestPayable = parseFloat (this.InterestPayable.toFixed(2));
-  }
-  calculateAmountPayable() {
+  
     this.AmountPayable =  parseInt(this.InterestPayable) + parseInt(this.LoanAmount)
     this.AmountPayable = parseFloat(this.AmountPayable.toFixed(2));
-    }
-  calculateMonthlyPayable() {
+  
      this.MonthlyPayable = this.AmountPayable / this.LoanTerm
     this.MonthlyPayable = parseFloat(this.MonthlyPayable.toFixed(2));
   }

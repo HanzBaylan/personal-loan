@@ -5,6 +5,7 @@
 </ion-header>
 
 <ion-content padding>
+  <img src="https://cdn.jsdelivr.net/gh/GabrielArellano/Personal-Loan-Calculator@master/calculator.png">
   <h1>PERSONAL LOAN CALCULATOR APP</h1>
   <p>
    This Personal Loan calculator will give you a broad estimate on what your monthly
@@ -13,6 +14,7 @@ payment will be and what the matured loan payment will be after it.
   <p>
     Source: https://www.ecomparemo.com/loans/personal-loan-calculator
     </p>
+     <h3> TRY IT NOW TO SEE YOURS! </h3>
   <br /> 
 <ion-item>
   <ion-label>Loan Amount:</ion-label>
@@ -27,17 +29,18 @@ payment will be and what the matured loan payment will be after it.
   <ion-input type="number" [(ngModel)]="InterestRate"></ion-input>
 </ion-item>
 
-<button ion-button color="secondary" (click)="calculateInterestPayable()" (click)="calculateAmountPayable()" (click)="calculateMonthlyPayable()" >
+<button ion-button color="secondary" (click)="calculate()" >
   CALCULATE
 </button>
-<ion-item *ngIf="calculateInterestPayable">
+
+<ion-item *ngIf="InterestPayable">
   <h2 >TOTAL INTEREST PAYABLE: {{InterestPayable}}</h2>
 </ion-item>
 
-<ion-item *ngIf="calculateAmountPayable">
+<ion-item *ngIf="AmountPayable">
   <h2 >TOTAL AMOUNT PAYABLE: {{AmountPayable}}</h2>
 </ion-item>
 
-<ion-item *ngIf="calculateMonthlyPayable">
+<ion-item *ngIf="MonthlyPayable">
   <h2 >MONTHLY PAYMENT: {{MonthlyPayable}}</h2>
 </ion-item>
