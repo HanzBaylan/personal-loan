@@ -19,11 +19,11 @@ export class HomePage {
     this.InterestPayable = parseFloat (this.InterestPayable.toFixed(2));
   }
   calculateAmountPayable() {
-    this.AmountPayable = this.LoanAmount + this.InterestPayable;
+    this.AmountPayable =  parseInt(this.InterestPayable) + parseInt(this.LoanAmount)
     this.AmountPayable = parseFloat(this.AmountPayable.toFixed(2));
     }
   calculateMonthlyPayable() {
-     this.MonthlyPayable = this.AmountPayable / this.LoanTerm;
+     this.MonthlyPayable = this.AmountPayable / this.LoanTerm
     this.MonthlyPayable = parseFloat(this.MonthlyPayable.toFixed(2));
   }
 }
