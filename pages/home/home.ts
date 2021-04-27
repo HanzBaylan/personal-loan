@@ -17,11 +17,13 @@ export class HomePage {
   calculateInterestPayable() {
     this.InterestPayable = this.LoanAmount * (this.InterestRate / 100) * this.LoanTerm;
     this.InterestPayable = parseFloat (this.InterestPayable.toFixed(2));
-
-    this.AmountPayable = (this.LoanAmount + this.InterestPayable);
+  }
+  calculateAmountPayable() {
+    this.AmountPayable = this.LoanAmount + this.InterestPayable;
     this.AmountPayable = parseFloat(this.AmountPayable.toFixed(2));
-    
-     this.MonthlyPayable = ((this.InterestPayable + this.AmountPayable * (this.InterestRate / 100) * this.LoanTerm) / this.LoanTerm)
+    }
+  calculateMonthlyPayable() {
+     this.MonthlyPayable = this.AmountPayable / this.LoanTerm;
     this.MonthlyPayable = parseFloat(this.MonthlyPayable.toFixed(2));
   }
-  }
+}
